@@ -5,7 +5,9 @@ Dockerized JSON Server
 
 ## FORK
 
-I have forked the original repo to add a angular based [admin-ui](https://github.com/lalyos/fast-prototyping-with-ng-and-json-server) to json-server
+Containerized Mock/Fake/Quick REST api serving up a static json file + a small admin UI at index.html
+
+I have forked the original repo to add an angular based [admin-ui](https://github.com/lalyos/fast-prototyping-with-ng-and-json-server) to [json-server](https://github.com/typicode/json-server).
 
 basic usage:
 ```
