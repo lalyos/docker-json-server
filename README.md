@@ -3,6 +3,35 @@ Dockerized JSON Server
 
 [![Circle CI](https://circleci.com/gh/William-Yeh/docker-json-server.svg?style=shield)](https://circleci.com/gh/William-Yeh/docker-json-server) [![Build Status](https://travis-ci.org/William-Yeh/docker-json-server.svg?branch=master)](https://travis-ci.org/William-Yeh/docker-json-server)
 
+## FORK
+
+I have forked the original repo to add a angular based [admin-ui](https://github.com/lalyos/fast-prototyping-with-ng-and-json-server) to json-server
+
+basic usage:
+```
+docker run -d \
+  --name json-server \
+  -p 3000:3000 \
+  lalyos/json-server
+```
+
+if you want to use a modified issues.json for start:
+```
+docker run -d \
+  --name json-server \
+  -v $PWD/:/custom \
+  -p 3000:3000 \
+  lalyos/json-server /custom/issues.json
+```
+
+or with a sample json from any http endpoint
+```
+docker run -d \
+  --name json-server \
+  -p 3000:3000 \
+  lalyos/json-server https://gist.githubusercontent.com/lalyos/2be21105e3607b4981c85a542cedc7fc/raw/issues.json
+
+```
 
 ## Summary
 
