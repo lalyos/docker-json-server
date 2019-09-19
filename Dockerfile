@@ -23,11 +23,18 @@ RUN \
            /usr/lib/node_modules/npm
 
 
+RUN apk add --no-cache git && \
+    git clone https://github.com/lalyos/fast-prototyping-with-ng-and-json-server.git app && \
+    cd app/public && \
+    npm install --production -g bower && \
+    rm -rf /root/.npm                  \
+           /usr/lib/node_modules/npm && \
+    bower install --allow-root
+
+WORKDIR /app/
 # configure
 EXPOSE 3000
-VOLUME [ "/data" ]
-WORKDIR /data
 
 # Define default command.
 ENTRYPOINT ["json-server", "--host", "0.0.0.0"]
-CMD ["--help"]
+CMD ["issues.json"]
