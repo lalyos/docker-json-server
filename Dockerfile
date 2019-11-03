@@ -10,9 +10,6 @@
 # pull base image
 FROM node:10-alpine
 
-MAINTAINER William Yeh <william.pjyeh@gmail.com>
-
-
 RUN \
     echo "==> Install app..."                && \
     npm install -g --production json-server  && \
@@ -35,6 +32,7 @@ WORKDIR /app/
 # configure
 EXPOSE 3000
 
+RUN sed -i  "/\h1/ s/>.*</>${title:- New TITLE}</" public/index.html
 # Define default command.
 ENTRYPOINT ["json-server", "--host", "0.0.0.0"]
 CMD ["issues.json"]
