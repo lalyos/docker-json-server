@@ -6,5 +6,4 @@ Vagrant.configure(2) do |config|
       cd /vagrant
       docker build -t json-server .
   SHELL
-
 end
